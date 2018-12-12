@@ -1,0 +1,36 @@
+#!/bin/sh
+
+_help=$(cat<<EOF
+help about this script
+in two line
+EOF
+)
+
+variable=${variable:="It's default"}
+variable_help="This is help about variable, default: $variable"
+
+variable2=${variable2:=""}
+variable2_help="This is help about variable2, default: $variable2"
+
+myfunc1_help="It's help about myfunc1"
+myfunc1() {
+  echo "inside myFunc1"
+  printf "\t\$variable : $variable\n"
+  printf "\t\$1        : $1\n"
+  printf "\t\$2        : $2\n"
+  printf "\t\$variable2: $variable2\n"
+}
+
+myfunc2_loop_help="It's help
+about myfunc1, and you can do multiline like this"
+myfunc2_loop() {
+   echo "It's loop by params $1"
+}
+
+myfunc3() {
+  echo "Function without help"
+}
+
+. ./params.lib.sh
+
+

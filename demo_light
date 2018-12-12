@@ -1,0 +1,8 @@
+#!/bin/sh
+
+myfunc1_help="It's help about myfunc1"
+myfunc1() {
+   echo "inside myFunc1"
+}
+
+. ./params.lib.sh

@@ -1,0 +1,51 @@
+./demo_full help
+help about this script
+in two line
+./demo_full help list
+	--myfunc1
+	--myfunc2_loop
+	variable="It's default"
+	variable2=""
+./demo_full help myfunc1
+It's help about myfunc1
+./demo_full help myfunc2_loop
+It's help
+about myfunc1, and you can do multiline like this
+./demo_full help variable
+This is help about variable, default: It's default
+./demo_full help myfunc3 || return 0
+Undefined!!!
+But you can try to use next advanced help peer values/function:
+		--myfunc1
+		--myfunc2_loop
+		variable="It's default"
+		variable2=""
+
+./demo_full myfunc1
+inside myFunc1
+	$variable : It's default
+	$1        : 
+	$2        : 
+	$variable2: 
+variable=new_value    ./demo_full myfunc1 first second
+inside myFunc1
+	$variable : new_value
+	$1        : first
+	$2        : second
+	$variable2: 
+variable2=other_value ./demo_full myfunc1 first second
+inside myFunc1
+	$variable : It's default
+	$1        : first
+	$2        : second
+	$variable2: other_value
+./demo_full myfunc2_loop first_line second_line
+It's loop by params first_line
+It's loop by params second_line
+./demo_full myfunc3
+Function without help
+./demo_light help || return 0
+Current script does't contain global _help...Undefined!!!
+But you can try to use next advanced help peer values/function:
+		--myfunc1
+
